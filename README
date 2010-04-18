@@ -12,6 +12,9 @@ http://serverfault.com/questions/126509/how-to-proxy-to-different-named-database
 and a similar question about renaming MySQL databases:
 http://stackoverflow.com/questions/67093/how-do-i-quickly-rename-a-mysql-database-change-schema-name
 
+RENAME DATABASE functionality existed natively within MySQL at one point in time but was removed when
+it was found to be unreliable.  http://dev.mysql.com/doc/refman/5.1/en/rename-database.html
+
 Author:  Chuck Clark <cclark@ziclix.com>
 Version: 0.1
 Date:    2010-04-19
@@ -19,7 +22,7 @@ Date:    2010-04-19
 Requirements
 ------------
 
-- Python 2.5+
+- Python 2.4+
 - MySQLdb (http://sourceforge.net/projects/mysql-python/)
 
 License
