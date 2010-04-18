@@ -1,0 +1,33 @@
+Summary
+-----------
+
+A simple script to provide rename/mv like functionality for MySQL databases.
+
+This script was written in response to not receiving any desirable answers to a question about easily
+switching between two databases in MySQL to minimize downtime when refreshing databases in an actively
+used environment.
+
+http://serverfault.com/questions/126509/how-to-proxy-to-different-named-databases-on-the-same-server-using-mysql-proxy
+
+and a similar question about renaming MySQL databases:
+http://stackoverflow.com/questions/67093/how-do-i-quickly-rename-a-mysql-database-change-schema-name
+
+Author:  Chuck Clark <cclark@ziclix.com>
+Version: 0.1
+Date:    2010-04-19
+
+Requirements
+------------
+
+- Python 2.5+
+- MySQLdb (http://sourceforge.net/projects/mysql-python/)
+
+License
+-------
+
+Released under the MIT License.
+
+Feedback
+--------
+
+Send patches, issues and comments to cclark@ziclix.com.
