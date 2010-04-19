@@ -22,7 +22,7 @@ Date:    2010-04-19
 Requirements
 ------------
 
-- Python 2.4+
+- Python 2.5+
 - MySQLdb (http://sourceforge.net/projects/mysql-python/)
 
 License
