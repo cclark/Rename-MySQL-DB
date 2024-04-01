@@ -38,6 +38,8 @@ def rename_db(old_db, new_db, options=None):
     conn_props["user"] = options.user
   if options.password:
     conn_props["passwd"] = options.password
+  if options.host:
+    conn_props["host"] = options.host
   cur = None
   try:
     cur = mysql.connect(**conn_props).cursor()
@@ -66,7 +68,7 @@ def rename_db(old_db, new_db, options=None):
     else: 
       for table in cur.fetchall():
         exec_sql(cur, "RENAME TABLE %s.%s TO %s.%s" % (old_db, table[0], new_db, table[0]))
-  except mysql._mysql.OperationalError, e:
+  except mysql._mysql.OperationalError as e:
     logging.error(e)
   finally:
     if cur:
@@ -82,6 +84,8 @@ def main():
 """
   
   parser = OptionParser(usage=usage, version="%prog 0.1")
+  parser.add_option("--host", dest="host",
+                    help="Host address of mysql server")
   parser.add_option("-p", "--password", dest="password",
                     help="Password for mysql user")
   parser.add_option("-u", "--user", dest="user",
