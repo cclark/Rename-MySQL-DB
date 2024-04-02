@@ -22,8 +22,36 @@ Date:    2010-04-19
 Requirements
 ------------
 
-- Python 2.5+
+- Python 2.7 & Python 3+
 - MySQLdb (http://sourceforge.net/projects/mysql-python/)
+
+
+Usage
+-----
+```bash
+$ python rename_db.py --help
+
+Usage: rename_db.py [options] <olddb> <newdb>
+  Script to 'rename' a MySQL database by moving all tables from one database to another.
+
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  --host=HOST           Host address of mysql server
+  -p PASSWORD, --password=PASSWORD
+                        Password for mysql user
+  -u USER, --user=USER  User name for mysql
+  -v, --verbose         Be verbose and show debugging level output
+  -q, --quiet           Be quiet.  Show no output unless an error occurs
+  --drop-triggers       Drop triggers instead of listing triggers preventing
+                        the renames from occurring
+  --create-database     Create the destination database if it doesn't exist
+
+
+$ python rename_db.py --host test-db.us-west-2.rds.amazonaws.com -u root -p password --create-database test test_v1
+```
+
 
 License
 -------
